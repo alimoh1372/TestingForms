@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(45deg,greenyellow, dodgerblue);
+    background: linear-gradient(45deg,greenyellow, dodgerblue) fixed;
     font-family: "Sansita Swashed", cursive;
 }
 
@@ -35,6 +35,7 @@ body {
         height: 50px;
         margin-bottom: 50px;
     }
+
 
         .center .inputbox input {
             position: absolute;
@@ -70,12 +71,6 @@ body {
             font-weight: bold;
         }
 
-        .center .inputbox [type="button"] {
-            width: 50%;
-            background: dodgerblue;
-            color: #fff;
-            border: #fff;
-        }
 
         .center .inputbox select {
             position: relative;
@@ -106,17 +101,14 @@ body {
             }
 
 .radiobox {
-    
     position: relative;
     width: 300px;
     height: 50px;
     border: 2px solid #000;
     margin-bottom: 50px;
     border-radius: 10px;
-    padding-left:20px;
-    padding-top:10px;
-    
-    
+    padding-left: 20px;
+    padding-top: 10px;
 }
 
     .radiobox span {
@@ -126,22 +118,86 @@ body {
         font-size: 1.0em;
     }
 
-.center .radiobox input[type=radio] {
+.center .radiobox input[type=radio],
+.center .radiobox input[type=checkbox] {
     position: relative;
-    padding-left:20px;
+    padding-left: 20px;
     outline: none;
     background: none;
     transition: 0.6s;
 }
 
 .center .radiobox label {
-    padding-left:10px;
+    padding-left: 10px;
     border-radius: 10px;
     font-size: 1.0em;
     transition: 0.6s;
 }
 
-.center .radiobox input[type=radio]:checked + label {
+.center .radiobox input[type=radio]:checked + label,
+.center .radiobox input[type=checkbox]:checked + label {
     font-size: 1.2em;
     font-weight: bold;
 }
+
+.center .textbox {
+    position: relative;
+    width: 300px;
+    margin-bottom: 50px;
+}
+
+    .center .textbox textarea {
+        position: relative;
+        top: 2em;
+        left: 0;
+        width: 100%;
+        resize: vertical;
+        border: 2px solid #000;
+        outline: none;
+        background: none;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+        .center .textbox textarea ~ span {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            font-size: 1.2em;
+            transition: 0.6s;
+            font-family: sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .center .textbox textarea:hover ~ span,
+        .center .textbox textarea:focus ~ span {
+            transform: translateX(50px);
+            font-size: 1.3em;
+            letter-spacing: 2px;
+            font-weight: bold;
+            transition: .6s;
+        }
+        .center form :last-child{
+            display:flexbox;
+            width:100%;
+            justify-content:space-between;
+            align-items:center;
+        }
+.center .inputbox input[type="button"],
+.center .inputbox input[type="reset"],
+.center .inputbox input[type="submit"] {
+    position:relative;
+    width: 30%;
+    background: dodgerblue;
+    border-radius: 15px;
+    color: #fff;
+    border: #fff;
+}
+
+    .center .inputbox input[type=button]:hover ,
+    .center .inputbox input[type=submit]:hover,
+    .center .inputbox input[type="reset"]:hover{
+        background: linear-gradient(45deg,greenyellow, dodgerblue);
+    }
